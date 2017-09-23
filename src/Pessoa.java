@@ -14,7 +14,7 @@ public class Pessoa {
     protected String CPF;
     protected String dataDeNascimento;
     protected Double pesoInicial;
-    protected Double pesoAtual;
+    private boolean pago;
     private String datadePagamento;
     private boolean matriculado;
     private String horario;

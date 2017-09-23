@@ -11,7 +11,7 @@ public class Professor extends Pessoa{
     
     public Professor(){
         //this.especialidade= new String [5];
-        this.pago = true;
+        this.pago = false;
     }
     
     @Override
@@ -21,7 +21,7 @@ public class Professor extends Pessoa{
         super.nome = nome;
         super.dataDeNascimento = dataDeNascimento;
         this.datadeRecebimento = dataDePagamento;
-        super.pesoAtual = Peso;
+        super.pesoInicial = Peso;
         String texto;
         texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
         txt.criaArquivoTxt(texto,arquivo);         
