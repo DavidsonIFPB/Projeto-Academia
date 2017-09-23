@@ -50,7 +50,7 @@ public class ArquivoTxt {
                         //retorna dataDenascimento
                        linha+=frase+"\n";
                 else
-                    if(a==4 && compara.equals(array[4]) && array[6].equals("pago"))
+                    if(a==4 && array[6].equals("pago"))
                         //retorna dataDePagamento
                        linha+=frase+"\n";
                 else
@@ -61,9 +61,9 @@ public class ArquivoTxt {
                     if(a==6 && compara.equals(array[5]))
                         linha+=frase+"\n";
                 else
-                    if(a==7 && compara.equals(array[4]) && array[6].equals("apaga"))
-                        //retorna dataDePagamento
+                    if(a==7 && array[6].equals("apagar")){                       
                        linha+=frase+"\n";
+                    }
                 
                         
                 

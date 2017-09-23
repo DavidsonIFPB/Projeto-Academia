@@ -5,7 +5,7 @@ public class Professor extends Pessoa{
     //private String especialidade[];
     private int id;
     private String datadeRecebimento;    
-    private boolean pago;
+    private String pago;
     private Pessoa a;
     private File arquivo = new File("professor.txt");
     private ArquivoTxt txt = new ArquivoTxt();
@@ -13,7 +13,7 @@ public class Professor extends Pessoa{
     public Professor(){
         //this.especialidade= new String [5];
         
-        this.pago = false;
+        
         
     }
     
@@ -27,12 +27,11 @@ public class Professor extends Pessoa{
         this.datadeRecebimento = dataDePagamento;
         super.pesoInicial = Peso;
         String texto;
-        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
+        this.pago = "apagar";
+        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+this.pago;
         txt.criaArquivoTxt(texto,arquivo);      
     }
-    public boolean getPago(){
-        return this.pago;
-    }
+   
     
     @Override
     public String getDatadePagamento(){

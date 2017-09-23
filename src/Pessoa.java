@@ -39,7 +39,7 @@ public class Pessoa {
         this.matriculado = true;
         this.diadePagamento = dataDePagamento;
         this.ultimoMespago = "";
-        this.pago = "pago";
+        this.pago = "apagar";
         String texto;
         texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+this.pago;
         txt.criaArquivoTxt(texto,arquivo);   

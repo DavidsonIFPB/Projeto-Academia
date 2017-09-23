@@ -4,15 +4,22 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 
 public class Relatorio extends javax.swing.JFrame {
+        private File aluno_arquivo = new File("aluno.txt");
+        private File professor_arquivo = new File("professor.txt");
         private ArquivoTxt pesquisa = new ArquivoTxt();
         Date data_1 = new Date();
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         
+        private int cont = 0;
+        
+        
         
         
     public Relatorio() {
+        
         initComponents();
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -23,18 +30,13 @@ public class Relatorio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         area = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        data = new javax.swing.JRadioButton();
-        nome = new javax.swing.JRadioButton();
-        cpf = new javax.swing.JRadioButton();
-        texto = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jButton3 = new javax.swing.JButton();
+        professores = new javax.swing.JRadioButton();
+        alunos = new javax.swing.JRadioButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,57 +47,23 @@ public class Relatorio extends javax.swing.JFrame {
         area.setEnabled(false);
         jScrollPane1.setViewportView(area);
 
-        jButton1.setText("Alunos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Pesquisar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Professores");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        buttonGroup3.add(professores);
+        professores.setText("Professores");
 
-        buttonGroup1.add(data);
-        data.setText("Data de Pagamento");
-        data.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dataActionPerformed(evt);
-            }
-        });
+        buttonGroup3.add(alunos);
+        alunos.setText("Alunos");
 
-        buttonGroup1.add(nome);
-        nome.setText("Nome");
-        nome.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.setText("Pago");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(cpf);
-        cpf.setText("CPF");
-        cpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cpfActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("Pago");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setText("A pagar");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
 
@@ -104,118 +72,63 @@ public class Relatorio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(data)
-                        .addGap(18, 18, 18)
-                        .addComponent(cpf)
-                        .addGap(33, 33, 33)
-                        .addComponent(nome)
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(professores)
+                        .addGap(50, 50, 50)
+                        .addComponent(alunos)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(80, 80, 80)
-                .addComponent(jButton2)
-                .addGap(82, 82, 82))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(116, 116, 116)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(data)
-                    .addComponent(cpf)
-                    .addComponent(nome))
-                .addGap(13, 13, 13)
-                .addComponent(texto, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                    .addComponent(professores)
+                    .addComponent(alunos))
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
-                .addGap(8, 8, 8)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap())
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox1))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        File arquivo = new File("arquivo.txt");
-        area.setText("");         
-        
-        if(nome.isSelected())            
-            area.setText(pesquisa.lerArquivosTxt(1,texto.getText(),arquivo));
-        
-        else
-            if(cpf.isSelected())                 
-                area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if(professores.isSelected()){
+            if(!jCheckBox1.isSelected())
+                area.setText(pesquisa.lerArquivosTxt(7, "", professor_arquivo));
+            else
+                area.setText(pesquisa.lerArquivosTxt(4, "", professor_arquivo));
+        }
+        else{
+            if(!jCheckBox1.isSelected())
+                area.setText(pesquisa.lerArquivosTxt(7, "", aluno_arquivo));
+            else
+                area.setText(pesquisa.lerArquivosTxt(4, "", aluno_arquivo));
             
-        else            
-            area.setText(pesquisa.lerArquivosTxt(4,texto.getText(),arquivo));
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        area.setText("");
-        File arquivo = new File("professor.txt");
         
-        if(nome.isSelected())            
-            area.setText(pesquisa.lerArquivosTxt(1,texto.getText(),arquivo));
-        
-        else
-            if(cpf.isSelected())                 
-                area.setText(pesquisa.lerArquivosTxt(2,texto.getText(),arquivo));
-            
-        else            
-            area.setText(pesquisa.lerArquivosTxt(4,texto.getText(),arquivo));
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataActionPerformed
-        area.setText("");
-    }//GEN-LAST:event_dataActionPerformed
-
-    private void cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfActionPerformed
-        area.setText("");
-    }//GEN-LAST:event_cpfActionPerformed
-
-    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
-        area.setText("");
-    }//GEN-LAST:event_nomeActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        File arquivo = new File("professor.txt");
-        String mes;
-        String array[] = new String[4];
-        mes =(String)formatador.format(data_1);
-        array = mes.split("/");
-        pesquisa.lerArquivosTxt(7, mes, arquivo);
-        
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,22 +161,18 @@ public class Relatorio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Relatorio().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton alunos;
     private javax.swing.JTextArea area;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JRadioButton cpf;
-    private javax.swing.JRadioButton data;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton nome;
-    private javax.swing.JTextField texto;
+    private javax.swing.JRadioButton professores;
     // End of variables declaration//GEN-END:variables
 }
