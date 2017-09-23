@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 
 public class Cadastrar extends javax.swing.JPanel {
-    private ArquivoTxt txt;    
+      
     private Pessoa aluno_2;   
     private Professor professor; 
     private Relatorio a;
@@ -9,7 +9,7 @@ public class Cadastrar extends javax.swing.JPanel {
     
     public Cadastrar() {
         initComponents();  
-        txt = new ArquivoTxt();
+        
         professor  = new Professor(); 
         aluno_2 = new Pessoa(); 
         a = new Relatorio();

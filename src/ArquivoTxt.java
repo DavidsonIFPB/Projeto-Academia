@@ -36,7 +36,8 @@ public class ArquivoTxt {
                 frase = br.readLine();
                 array = frase.split(" ");
                 if(a==0)
-                    linha=array[0];
+                    linha=array[0];              
+                    
                 else
                     if(a==1 && compara.equals(array[1]))  
                         //Compara nomes                    
@@ -56,6 +57,14 @@ public class ArquivoTxt {
                     if(a==5 && compara.equals(array[5]))
                        //retorna Peso
                        linha+=frase+"\n";
+                else
+                    if(a==6 && compara.equals(array[5]))
+                        linha+=frase+"\n";
+                      
+                
+                        
+                
+                     
             }
             br.close();
             fr.close();
@@ -75,6 +84,11 @@ public class ArquivoTxt {
         return 0;
         
         
+    }
+    
+    public void modificaPessoa(){
+    
+    
     }
     
         

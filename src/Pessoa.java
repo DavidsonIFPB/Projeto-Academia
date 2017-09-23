@@ -9,7 +9,7 @@ public class Pessoa {
     protected String CPF;
     protected String dataDeNascimento;
     protected Double pesoInicial;
-    private boolean pago;
+    private String pago;
     private String datadePagamento;
     private boolean matriculado;
     private String horario;
@@ -37,8 +37,9 @@ public class Pessoa {
         this.pesoInicial = Peso;
         this.matriculado = true;
         this.datadePagamento = dataDePagamento;
+        this.pago = "pago";
         String texto;
-        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
+        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+pago;
         txt.criaArquivoTxt(texto,arquivo);
         
   
