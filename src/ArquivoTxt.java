@@ -89,7 +89,8 @@ public class ArquivoTxt {
         String texto ="";
         if(a.exists()){ 
            texto = lerArquivosTxt(9,"", a);
-           if(texto==" "){               
+           if(texto!="" || texto != " "){ 
+               System.out.println("aqui");
                id = Integer.parseInt(texto);
            }
            return id;            
