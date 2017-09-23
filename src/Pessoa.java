@@ -1,15 +1,10 @@
 
 import java.io.File;
 
-public class Pessoa {
-    public Pessoa() {
-        this.nome ="Default";
-        this.CPF ="Default";
-        this.dataDeNascimento = "Default";        
-        this.matriculado = false;
-    }   
-    private File arquivo = new File("arquivo.txt");
-    static int id;
+public class Pessoa {    
+    private File arquivo = new File("aluno.txt");
+    private ArquivoTxt txt = new ArquivoTxt();
+    private int id;
     protected String nome;
     protected String CPF;
     protected String dataDeNascimento;
@@ -18,7 +13,15 @@ public class Pessoa {
     private String datadePagamento;
     private boolean matriculado;
     private String horario;
-    private ArquivoTxt txt;
+    
+    
+    public Pessoa() {
+        //this.id = 0;
+        this.nome ="Default";
+        this.CPF ="Default";
+        this.dataDeNascimento = "Default";        
+        this.matriculado = false;
+    }   
     
     public String getDatadePagamento(){
         return this.datadePagamento;
@@ -26,6 +29,7 @@ public class Pessoa {
 
     public void cadastraPessoa(String nome,String CPF,
             String datadeNascimento,String dataDePagamento,double Peso) {
+        this.id = txt.existArquivos(arquivo);
         txt = new ArquivoTxt();
         this.nome = nome;
         this.CPF = CPF;
@@ -34,8 +38,9 @@ public class Pessoa {
         this.matriculado = true;
         this.datadePagamento = dataDePagamento;
         String texto;
-        texto=nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
-        txt.criaArquivoTxt(texto,arquivo);              
+        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso;
+        txt.criaArquivoTxt(texto,arquivo);
+        
   
      
     }

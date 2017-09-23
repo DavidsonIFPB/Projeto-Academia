@@ -1,16 +1,21 @@
 import javax.swing.JFrame;
 
 public class Cadastrar extends javax.swing.JPanel {
-    static private int id;   
-    
-    private Relatorio a = new Relatorio();
-    private Pessoa aluno_2 = new Pessoa();    
-    private Professor professor  = new Professor();    
+    private ArquivoTxt txt;    
+    private Pessoa aluno_2;   
+    private Professor professor; 
+    private Relatorio a;
+    int id = 0;
     
     public Cadastrar() {
-        initComponents();        
+        initComponents();  
+        txt = new ArquivoTxt();
+        professor  = new Professor(); 
+        aluno_2 = new Pessoa(); 
+        a = new Relatorio();
     }
-    public static void main(String[] args) {                
+    public static void main(String[] args) {                         
+                
         
 		JFrame janela = new JFrame("Cadastro");
 		Cadastrar meuPainel = new Cadastrar();
@@ -19,8 +24,7 @@ public class Cadastrar extends javax.swing.JPanel {
 		janela.add(meuPainel);
 		janela.setSize(400,394);
 		janela.setVisible(true);
-	}
-   
+	}  
     
 
     @SuppressWarnings("unchecked")
@@ -154,16 +158,18 @@ public class Cadastrar extends javax.swing.JPanel {
 
     private void tipocaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipocaixaActionPerformed
         
+        
     }//GEN-LAST:event_tipocaixaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            if(tipocaixa.getSelectedItem()=="Aluno"){            
+            if(tipocaixa.getSelectedItem()=="Aluno"){                 
                 aluno_2.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
             }
-            else{                
+            else{             
                 professor.cadastraPessoa(nome.getText(),cpf.getText(),
                         data.getText(), data1.getText(), Double.parseDouble(peso.getText()));
+                
             }
         nome.setText("");
         cpf.setText("");
