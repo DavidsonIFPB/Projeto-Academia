@@ -1,18 +1,13 @@
 
 import java.io.File;
+  import java.util.Date;
+import java.text.SimpleDateFormat;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Davidson
- */
 public class Relatorio extends javax.swing.JFrame {
-        private ArquivoTxt pesquisa = new ArquivoTxt();           
+        private ArquivoTxt pesquisa = new ArquivoTxt();
+        Date data_1 = new Date();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        
         
         
     public Relatorio() {
@@ -90,9 +85,19 @@ public class Relatorio extends javax.swing.JFrame {
 
         buttonGroup2.add(jRadioButton1);
         jRadioButton1.setText("Pago");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(jRadioButton2);
         jRadioButton2.setText("A pagar");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,6 +202,20 @@ public class Relatorio extends javax.swing.JFrame {
     private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         area.setText("");
     }//GEN-LAST:event_nomeActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        File arquivo = new File("professor.txt");
+        String mes;
+        String array[] = new String[4];
+        mes =(String)formatador.format(data_1);
+        array = mes.split("/");
+        pesquisa.lerArquivosTxt(7, mes, arquivo);
+        
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments

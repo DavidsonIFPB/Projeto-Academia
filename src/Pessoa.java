@@ -10,9 +10,10 @@ public class Pessoa {
     protected String dataDeNascimento;
     protected Double pesoInicial;
     private String pago;
-    private String datadePagamento;
+    private String diadePagamento;
     private boolean matriculado;
-    private String horario;
+    
+    private String ultimoMespago;
     
     
     public Pessoa() {
@@ -24,7 +25,7 @@ public class Pessoa {
     }   
     
     public String getDatadePagamento(){
-        return this.datadePagamento;
+        return this.diadePagamento;
     }
 
     public void cadastraPessoa(String nome,String CPF,
@@ -36,12 +37,12 @@ public class Pessoa {
         this.dataDeNascimento = datadeNascimento;
         this.pesoInicial = Peso;
         this.matriculado = true;
-        this.datadePagamento = dataDePagamento;
+        this.diadePagamento = dataDePagamento;
+        this.ultimoMespago = "";
         this.pago = "pago";
         String texto;
-        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+pago;
-        txt.criaArquivoTxt(texto,arquivo);
-        
+        texto=this.id+1+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+this.pago;
+        txt.criaArquivoTxt(texto,arquivo);   
   
      
     }
@@ -58,7 +59,7 @@ public class Pessoa {
         else
             System.out.print("Nao matriculado |");    
         System.out.print("Nome:"+this.nome);
-        System.out.print("Data de Pagamento:"+this.datadePagamento);
+        System.out.print("Data de Pagamento:"+this.diadePagamento);
         if(Peso-this.pesoInicial>0)
             System.out.print("Ganhou: "+(Peso-this.pesoInicial)+"Kg");
         else
@@ -73,7 +74,7 @@ public class Pessoa {
         else
             texto = "Nao matriculado |";    
         texto += "Nome:"+this.nome+ "|";
-        texto +="Data de Pagamento:"+this.datadePagamento;        
+        texto +="Data de Pagamento:"+this.diadePagamento;        
         return texto;
 
     }
