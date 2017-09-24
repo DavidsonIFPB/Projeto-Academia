@@ -106,9 +106,14 @@ public class ArquivoTxt {
         String texto = id+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+pago;
         String linha = "";
         String frase = "";
+        
         String array[] = new String[20];
         File arquivo = new File(texto_2);
         String buffer = lerArquivosTxt(8, "", arquivo);
+        
+        int a = 0;
+        a=existArquivos(arquivo);
+        
         
         try{                        
             FileReader fr = new FileReader(arquivo); 
@@ -121,7 +126,8 @@ public class ArquivoTxt {
             String array2[] = new String[100];
             
             int i = 0;
-            while (i<3) {
+            
+            while (i<a) {
                 array2 = buffer.split("\n");
                 
                 if(array2[i]!=" " ||array2[i]!="")
@@ -156,6 +162,8 @@ public class ArquivoTxt {
         File arquivo = new File(texto_2);
         String buffer = lerArquivosTxt(8, "", arquivo);
         
+        int a = 0;
+        a=existArquivos(arquivo);
         try{                        
             FileReader fr = new FileReader(arquivo); 
             BufferedReader br = new BufferedReader(fr);           
@@ -167,7 +175,8 @@ public class ArquivoTxt {
             String array2[] = new String[100];
             
             int i = 0;
-            while (i<3) {
+            
+            while (i<a) {
                 array2 = buffer.split("\n");
                 
                 if(array2[i]!=" " ||array2[i]!="")
@@ -188,6 +197,26 @@ public class ArquivoTxt {
     
     }
 
+    public int qtd_linhas(File arquivo){        
+        int i = 0;
+        try{
+            FileReader fr = new FileReader(arquivo);
+            BufferedReader br = new BufferedReader(fr);
+            
+            while (br.ready()) {
+                i+=1;        
+            }
+            br.close();
+            fr.close();
+        
+        } catch (IOException ex) { 
+            System.out.println("Erro");
+        }            
+                
+        
+        return i;
+    }
+    
 }
 
    

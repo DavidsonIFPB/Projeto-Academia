@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,10 +7,6 @@ public class updateEdelete extends javax.swing.JFrame {
     private ArquivoTxt txt;
     private String pago = "";
  
-
-    /**
-     * Creates new form updateEdelete
-     */
     public updateEdelete() {
         txt = new ArquivoTxt();
         
@@ -39,15 +34,7 @@ public class updateEdelete extends javax.swing.JFrame {
                         pagamento.setText(array[4]);
                         peso.setText(array[5]);
                         pago = array[6];
-                    }
-                else
-                    if(opcao==3 && id.equals(array[0])){
-                        String texto_1;
-                        texto_1 = array[0]+" "+nome.getText()+" "+cpf.getText()+" "+nascimento.getText()
-                                +" "+pagamento.getText()+" "+peso.getText();
-                        txt.criaArquivoTxt(texto_1, a);
-                        break;
-                    }
+                    }                
             }
             br.close();
             fr.close();
