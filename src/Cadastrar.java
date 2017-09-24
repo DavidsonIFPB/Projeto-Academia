@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 public class Cadastrar extends javax.swing.JPanel {
       
@@ -181,6 +182,10 @@ public class Cadastrar extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         a.setVisible(true);
+        Cadastrar h = new Cadastrar();      
+        
+        a.setDefaultCloseOperation(a.DISPOSE_ON_CLOSE);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

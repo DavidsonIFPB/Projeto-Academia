@@ -34,7 +34,8 @@ public class updateEdelete extends javax.swing.JFrame {
                         pagamento.setText(array[4]);
                         peso.setText(array[5]);
                         pago = array[6];
-                    }                
+                    }
+                
             }
             br.close();
             fr.close();
@@ -217,6 +218,7 @@ public class updateEdelete extends javax.swing.JFrame {
     }//GEN-LAST:event_professor_radioActionPerformed
 
     private void id_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_comboActionPerformed
+        
         if(aluno_radio.isSelected())            
             lerArquivosTxt(2, "aluno.txt", (String) id_combo.getSelectedItem());
         else
