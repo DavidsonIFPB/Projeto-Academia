@@ -1,3 +1,0 @@
-1 Davidson_1 000 31/05/2000 22 80.0 apagar
-2 Davidson_Xavier 212 31/06 57 82 pago
-3 rubens 111 111 11 80.0 apagar

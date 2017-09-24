@@ -88,6 +88,11 @@ public class updateEdelete extends javax.swing.JFrame {
         });
 
         jButton1.setText("Apagar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Modificar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +250,18 @@ public class updateEdelete extends javax.swing.JFrame {
             
             }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(aluno_radio.isSelected())            
+            txt.apaga_linha((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
+                    ,peso.getText(),pago,"aluno.txt");
+        else
+            if(professor_radio.isSelected()){                              
+               txt.apaga_linha((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
+                    ,peso.getText(),pago,"professor.txt");
+            
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

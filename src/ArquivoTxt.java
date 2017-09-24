@@ -149,7 +149,42 @@ public class ArquivoTxt {
     
     public void apaga_linha(String id,String nome,String CPF,
             String datadeNascimento,String dataDePagamento,String Peso,String pago,String texto_2){
-    
+        String texto = id+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+pago;
+        String linha = "";
+        String frase = "";
+        String array[] = new String[20];
+        File arquivo = new File(texto_2);
+        String buffer = lerArquivosTxt(8, "", arquivo);
+        
+        try{                        
+            FileReader fr = new FileReader(arquivo); 
+            BufferedReader br = new BufferedReader(fr);           
+            
+           FileWriter fw = new FileWriter(arquivo,false);;
+           fw = new FileWriter(arquivo,true);
+            
+            BufferedWriter bw = new BufferedWriter(fw);                          
+            String array2[] = new String[100];
+            
+            int i = 0;
+            while (i<3) {
+                array2 = buffer.split("\n");
+                
+                if(array2[i]!=" " ||array2[i]!="")
+                    array = array2[i].split(" ");
+         
+                if(!array[0].equals(id)){                     
+                     bw.write(array2[i]);                    
+                    bw.newLine();                    
+                }                
+                i+=1;
+            }             
+            bw.close();            
+            fw.close();            
+            br.close();
+            fr.close();                              
+        } catch (IOException ex) {            
+        } 
     
     }
 
