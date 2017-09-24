@@ -101,9 +101,9 @@ public class ArquivoTxt {
     }
     
     public void modificaPessoa(String id,String nome,String CPF,
-            String datadeNascimento,String dataDePagamento,String Peso,String texto_2){
+            String datadeNascimento,String dataDePagamento,String Peso,String pago,String texto_2){
         
-        String texto = id+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+"pago";
+        String texto = id+" "+nome+" "+CPF+" "+datadeNascimento+" "+dataDePagamento+" "+Peso+" "+pago;
         String linha = "";
         String frase = "";
         String array[] = new String[20];
@@ -145,9 +145,16 @@ public class ArquivoTxt {
         } catch (IOException ex) {            
         }        
 
-    }    
+    }  
+    
+    public void apaga_linha(String id,String nome,String CPF,
+            String datadeNascimento,String dataDePagamento,String Peso,String pago,String texto_2){
+    
+    
+    }
 
 }
+
    
     
 
