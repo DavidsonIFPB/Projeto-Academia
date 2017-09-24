@@ -129,10 +129,8 @@ public class ArquivoTxt {
             
             while (i<a) {
                 array2 = buffer.split("\n");
-                
-                if(array2[i]!=" " ||array2[i]!="")
+                if(array2[i]!=" " ||array2[i]!="" || array2[i]!=null)
                     array = array2[i].split(" ");
-//                System.out.println(array[0]);
                 
                 if(array[0].equals(id)){                     
                      bw.write(texto);
@@ -143,6 +141,7 @@ public class ArquivoTxt {
                     bw.newLine();                                    
                 }
                 i+=1;
+                
             }             
             bw.close();            
             fw.close();            
@@ -179,12 +178,12 @@ public class ArquivoTxt {
             while (i<a) {
                 array2 = buffer.split("\n");
                 
-                if(array2[i]!=" " ||array2[i]!="")
+                if(array2[i]!=" " ||array2[i]!="" || array2[i]!=null)
                     array = array2[i].split(" ");
          
                 if(!array[0].equals(id)){                     
                      bw.write(array2[i]);                    
-                    bw.newLine();                    
+                     bw.newLine();                    
                 }                
                 i+=1;
             }             
@@ -215,6 +214,13 @@ public class ArquivoTxt {
                 
         
         return i;
+    }
+    public boolean exist(String arquivo){
+        File arquivos = new File(arquivo);
+        if(!arquivos.exists())
+            return false;
+        else
+            return true;
     }
     
 }

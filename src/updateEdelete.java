@@ -6,6 +6,7 @@ import java.io.IOException;
 public class updateEdelete extends javax.swing.JFrame {
     private ArquivoTxt txt;
     private String pago = "";
+    private int i = 0;
  
     public updateEdelete() {
         txt = new ArquivoTxt();
@@ -18,14 +19,17 @@ public class updateEdelete extends javax.swing.JFrame {
         String linha = "";
         String frase = linha;
         String array[] = new String[100];
+        
         try{
             FileReader fr = new FileReader(arquivo);
             BufferedReader br = new BufferedReader(fr);          
             while (br.ready()) {                
                 frase = br.readLine();
                 array = frase.split(" ");
-                if(opcao==1)                    
-                    id_combo.addItem(array[0]); 
+                if(opcao==1) {                  
+                    id_combo.addItem(array[0]);
+                    
+                }
                 else
                     if(opcao==2 && id.equals(array[0])){
                         nome.setText(array[1]);
@@ -207,18 +211,17 @@ public class updateEdelete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aluno_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aluno_radioActionPerformed
-        //id_combo.removeAllItems();
+        
         lerArquivosTxt(1,"aluno.txt","");
     }//GEN-LAST:event_aluno_radioActionPerformed
 
     private void professor_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professor_radioActionPerformed
-        //id_combo.removeAllItems();
+        
         lerArquivosTxt(1,"professor.txt","");
         
     }//GEN-LAST:event_professor_radioActionPerformed
 
     private void id_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_comboActionPerformed
-        
         if(aluno_radio.isSelected())            
             lerArquivosTxt(2, "aluno.txt", (String) id_combo.getSelectedItem());
         else
@@ -241,6 +244,7 @@ public class updateEdelete extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         if(aluno_radio.isSelected())            
             txt.apaga_linha((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
                     ,peso.getText(),pago,"aluno.txt");
