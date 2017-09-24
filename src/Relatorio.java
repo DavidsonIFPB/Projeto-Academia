@@ -35,7 +35,7 @@ public class Relatorio extends javax.swing.JFrame {
         alunos = new javax.swing.JRadioButton();
         jCheckBox1 = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         area.setColumns(20);
         area.setRows(5);
