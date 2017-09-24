@@ -107,12 +107,12 @@ public class pagamento extends javax.swing.JFrame {
         String array[] = new String[100];
         if(jRadioButton1.isSelected()){
             array = pesquisa.lerArquivosTxt(0, id_texto.getText(), aluno_arquivo).split(" ");
-            pesquisa.modificaPessoa(id_texto.getText(),array[1], array[2], array[3],array[4],array[5], aluno_arquivo);
+            pesquisa.modificaPessoa(id_texto.getText(),array[1], array[2], array[3],array[4],array[5], "aluno.txt");
         }
         else
             if(jRadioButton2.isSelected()){
             array = pesquisa.lerArquivosTxt(0, id_texto.getText(), professor_arquivo).split(" ");
-            pesquisa.modificaPessoa(id_texto.getText(),array[1], array[2], array[3],array[4],array[5], professor_arquivo);
+            pesquisa.modificaPessoa(id_texto.getText(),array[1], array[2], array[3],array[4],array[5], "professor.txt");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
