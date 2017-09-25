@@ -12,8 +12,14 @@ public class telaPrincipal extends javax.swing.JFrame {
 
     ArquivoTxt txt = new ArquivoTxt();
     public telaPrincipal() {        
-            
+        
         initComponents();
+        if(txt.exist("aluno.txt")){            
+            but_modificar.setEnabled(true);
+            but_pagar.setEnabled(true);
+            but_relatorio.setEnabled(true);          
+        
+        }
     }
 
     /**
@@ -46,6 +52,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         but_cadastrar.setBounds(0, 0, 130, 140);
 
         but_modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Editar e Deletar.png"))); // NOI18N
+        but_modificar.setEnabled(false);
         but_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_modificarActionPerformed(evt);
@@ -55,6 +62,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         but_modificar.setBounds(270, 0, 130, 140);
 
         but_relatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Relatorio (2).png"))); // NOI18N
+        but_relatorio.setEnabled(false);
         but_relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_relatorioActionPerformed(evt);
@@ -64,6 +72,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         but_relatorio.setBounds(0, 220, 130, 140);
 
         but_pagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pagamento.png"))); // NOI18N
+        but_pagar.setEnabled(false);
         but_pagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 but_pagarActionPerformed(evt);

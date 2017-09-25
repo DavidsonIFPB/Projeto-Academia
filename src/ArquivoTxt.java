@@ -195,26 +195,7 @@ public class ArquivoTxt {
         } 
     
     }
-
-    public int qtd_linhas(File arquivo){        
-        int i = 0;
-        try{
-            FileReader fr = new FileReader(arquivo);
-            BufferedReader br = new BufferedReader(fr);
-            
-            while (br.ready()) {
-                i+=1;        
-            }
-            br.close();
-            fr.close();
-        
-        } catch (IOException ex) { 
-            System.out.println("Erro");
-        }            
-                
-        
-        return i;
-    }
+    
     public boolean exist(String arquivo){
         File arquivos = new File(arquivo);
         if(!arquivos.exists())
