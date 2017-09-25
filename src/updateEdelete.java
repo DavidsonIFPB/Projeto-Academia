@@ -211,47 +211,54 @@ public class updateEdelete extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aluno_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aluno_radioActionPerformed
-        
+        id_combo.removeAllItems();
         lerArquivosTxt(1,"aluno.txt","");
     }//GEN-LAST:event_aluno_radioActionPerformed
 
     private void professor_radioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_professor_radioActionPerformed
-        
+        id_combo.removeAllItems();
         lerArquivosTxt(1,"professor.txt","");
         
     }//GEN-LAST:event_professor_radioActionPerformed
 
     private void id_comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_comboActionPerformed
+        if(id_combo.getSelectedItem()!=null){
         if(aluno_radio.isSelected())            
             lerArquivosTxt(2, "aluno.txt", (String) id_combo.getSelectedItem());
         else
             if(professor_radio.isSelected()){                              
                 lerArquivosTxt(2, "professor.txt", (String) id_combo.getSelectedItem());
-            
+            }   
             }
     }//GEN-LAST:event_id_comboActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(aluno_radio.isSelected())            
+        if(aluno_radio.isSelected()){            
             txt.modificaPessoa((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
                     ,peso.getText(),pago,"aluno.txt");
+           aluno_radioActionPerformed(evt);
+        }
         else
             if(professor_radio.isSelected()){                              
                txt.modificaPessoa((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
                     ,peso.getText(),pago,"professor.txt");
-            
+               professor_radioActionPerformed(evt);
+          
             }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(aluno_radio.isSelected())            
+        if(aluno_radio.isSelected()){            
             txt.apaga_linha((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
                     ,peso.getText(),pago,"aluno.txt");
+            aluno_radioActionPerformed(evt);
+        }
         else
             if(professor_radio.isSelected()){                              
                txt.apaga_linha((String)id_combo.getSelectedItem(),nome.getText(),cpf.getText(),nascimento.getText(), pagamento.getText()
                     ,peso.getText(),pago,"professor.txt");
+               professor_radioActionPerformed(evt);
             
             }
     }//GEN-LAST:event_jButton1ActionPerformed
